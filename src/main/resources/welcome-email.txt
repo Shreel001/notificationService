@@ -1,0 +1,15 @@
+Dear ${username},
+
+We are thrilled to welcome you to the Banking App community! Your account has been successfully created and is ready to use.
+
+You can now log in using your registered email address (${email}) and the password you set up during registration.
+
+Get Started Today:
+* Explore your dashboard: See all your linked accounts and balances in one place.
+* Manage your finances: Set up automatic transfers and budget goals.
+* Access support: Our support team is here 24/7 if you need assistance.
+
+We are committed to providing you with a secure and seamless banking experience.
+
+Welcome aboard,
+The Banking App Team
