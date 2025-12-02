@@ -20,8 +20,8 @@ public class KafkaConsumers {
     private String subject = "Welcome to the Banking App Family!";
 
     @KafkaListener(topics = "user-registered", groupId = "${spring.kafka.consumer.group-id}")
-    public ResponseEntity<?> sendEmail(UserRegisteredEvent event){
-        try{
+    public void sendEmail(UserRegisteredEvent event) {
+        try {
             String body = readFileService.readFileFromResource("welcome-email.txt");
 
             String customizedBody = body
@@ -29,9 +29,10 @@ public class KafkaConsumers {
                     .replace("${email}", event.getEmail());
 
             emailService.sendEmail(event.getEmail(), subject, customizedBody);
-            return ResponseEntity.ok("Success!");
+
+            System.out.println("📧 Email sent to: " + event.getEmail());
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
