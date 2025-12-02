@@ -8,8 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import static java.lang.StringUTF16.replace;
-
 @Service
 public class KafkaConsumers {
 
