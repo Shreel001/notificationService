@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import static java.lang.StringUTF16.replace;
+
 @Service
 public class KafkaConsumers {
 
@@ -26,7 +28,8 @@ public class KafkaConsumers {
 
             String customizedBody = body
                     .replace("${username}", event.getUsername())
-                    .replace("${email}", event.getEmail());
+                    .replace("${email}", event.getEmail())
+                    .replace("${id}", event.getId().toString());
 
             emailService.sendEmail(event.getEmail(), subject, customizedBody);
 
